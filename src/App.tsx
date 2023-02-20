@@ -1,7 +1,6 @@
-import './App.css'
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import type {state} from "./main"
+import {state} from "./main"
 
 export default function App() {
     const dispatch = useDispatch()
@@ -9,7 +8,6 @@ export default function App() {
     function handleKeyDown(e:any) {
         if(e.key === "Enter") {
             dispatch(textChange(e.target.value))
-        console.log(e)
         }
     }
     return (
@@ -23,7 +21,7 @@ export default function App() {
 }
 
 function Output() {
-    let message = useSelector((state:state) => state.name)
+    let message = useSelector((state:state) => state.text)
     return <p>Your message: {message}</p>
 }
 

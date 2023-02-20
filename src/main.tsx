@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {createStore} from "redux"
+import {legacy_createStore as createStore} from "redux"
 import {Provider} from "react-redux"
 import App from './App'
 import './index.css'
@@ -11,15 +11,15 @@ const store = createStore(
 )
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <Provider store={store}>
-        <React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
             <App />
-        </React.StrictMode>
-    </Provider>
+        </Provider>
+    </React.StrictMode>
 )
 
 export interface state {
-    name:string
+    text:string
 }
 
 interface action {
@@ -27,12 +27,12 @@ interface action {
     payload:any
 }
 
-function reducer(state:state={name:""}, action:action):state {
+function reducer(state:state={text:""}, action:action):state {
     switch(action.type) {
         case "textChange": {
             return {
                 ...state,
-                name: action.payload
+                text: action.payload
             }
         }
         default:
