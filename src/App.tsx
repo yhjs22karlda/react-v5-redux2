@@ -1,12 +1,12 @@
 import './App.css'
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import type {state} from "./main.tsx"
+import type {state} from "./main"
 
 export default function App() {
     const dispatch = useDispatch()
 
-    function handleKeyDown(e) {
+    function handleKeyDown(e:any) {
         if(e.key === "Enter") {
             dispatch(textChange(e.target.value))
         console.log(e)
