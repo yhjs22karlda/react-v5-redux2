@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import {legacy_createStore as createStore} from "redux"
 import {Provider} from "react-redux"
 import App from './App'
-import './index.css'
 
 const store = createStore(
     reducer,

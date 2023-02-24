@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
+import {useDispatch} from "react-redux"
+import {useSelector} from "react-redux"
 import {state} from "./main"
 
 export default function App() {
@@ -10,6 +10,7 @@ export default function App() {
             dispatch(textChange(e.target.value))
         }
     }
+
     return (
         <>
         <div className="app">
@@ -25,8 +26,8 @@ function Output() {
     return <p>Your message: {message}</p>
 }
 
-const textChange = (text:string) => {
-    return {
+const textChange = (text:string) => { // action creator
+    return { // action
         type: "textChange",
         payload: text
     }
